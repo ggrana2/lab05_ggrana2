@@ -30,7 +30,10 @@ distance = pow(pow(q.x - p.x,2) + pow(q.y - p.y,2) ,0.5);
 
 
 void initPoint(struct Point *p, double xVal, double yVal) {
-  //return; //@@@ for a void function, the stub is just a bare return that does nothing
+
+	(*p).x = xVal;
+	(*p).y = yVal;
+
 }
 
 
