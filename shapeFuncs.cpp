@@ -53,9 +53,7 @@ string boxToString(Box b, int precision) {
  
 
 
-bool pointsApproxEqual(Point p1, 
-		       Point p2, 
-		       double tolerance) {
+bool pointsApproxEqual(Point p1, Point p2, double tolerance) {
   // Two points are approximately equal if the distance between them
   // is less than our tolerance.  (If we want to test for 
   // exact equality, we can pass in a value of zero.)
@@ -66,7 +64,14 @@ bool pointsApproxEqual(Point p1,
 
 bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
 
-  // Two boxes are approximately equal if their upper left corners are approximately 
+Box* p1 = &b1;
+Box* p2 = &b2;
+
+if((fabs(p1->ul.x - p2->ul.x) < tolerance) && (fabs(p1->ul.y - p2->ul.y) < tolerance) && (fabs(p1->width - p2->width) < tolerance) && (fabs(p1->height - p2->height) < tolerance)){
+	return true;
+} 
+
+	// Two boxes are approximately equal if their upper left corners are approximately 
   // equal, and if their corresponding widths and height are approx equal.
 
   // Remember: to test whether double values a and b are approximately equal, you need:
