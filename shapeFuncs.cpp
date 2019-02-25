@@ -69,23 +69,8 @@ Box* p2 = &b2;
 
 if((fabs(p1->ul.x - p2->ul.x) < tolerance) && (fabs(p1->ul.y - p2->ul.y) < tolerance) && (fabs(p1->width - p2->width) < tolerance) && (fabs(p1->height - p2->height) < tolerance)){
 	return true;
-} 
-
-	// Two boxes are approximately equal if their upper left corners are approximately 
-  // equal, and if their corresponding widths and height are approx equal.
-
-  // Remember: to test whether double values a and b are approximately equal, you need:
-  //   fabs(a - b) < tol
-  // Don't use a==b since this doesn't take tolerance into account.
-  // You'll need to use this technique for width and height
- 
-  // You may find it helpful to abstract out an "approxEqual" function that takes
-  // two parameters of type "double".  Put the prototype in your utility.h 
-  // and the definition in your utility.cpp file.
-
-  // TODO: FILL THIS IN WITH APPROPRIATE CODE
-
-  return false; // STUB!  TODO: Delete this line and comment and replace with appropriate code
+} else
+	return false;
 }
 
 
@@ -100,8 +85,14 @@ if((fabs(p1->ul.x - p2->ul.x) < tolerance) && (fabs(p1->ul.y - p2->ul.y) < toler
 
 void initBox(struct Box *b, double ulx, double uly, double w, double h)
 {
+
+	b->ul.x = ulx;
+	b->ul.y = uly;
+	b->width = w;
+	b->height = h;
+
   return; // @@@ For a void function a "naked return" is a "do nothing" stub
-}
+} 
 
 
 double areaOfBox(Box b) {
