@@ -48,7 +48,7 @@ string boxToString(Box b, int precision) {
   Box* b1 = &b;
  ostringstream oss;
  oss << setprecision(precision); // set precision to 3 decimal places
- oss << "ul=(" << b1->ul.x << ", " << b1->ul.y << ")" << "w= "<< b1->width <<"h= " << b1->height ;
+ oss << "ul=(" << b1->ul.x << "," << b1->ul.y << ")" << "w="<< b1->width <<",h= " << b1->height ;
  return oss.str();	
   // SAMPLE FORMAT: ul=(3.4,-5),w=5,h=7
   
