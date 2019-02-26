@@ -45,12 +45,17 @@ string pointToString(Point p, int precision) {
 }
 
 string boxToString(Box b, int precision) {
-  
+  Box* b1 = &b;
+ ostringstream oss;
+ oss << setprecision(precision); // set precision to 3 decimal places
+ oss << "ul=(" << b1->ul.x << ", " << b1->ul.y << ")" << "w= "<< b1->width <<"h= " << b1->height ;
+ return oss.str();	
   // SAMPLE FORMAT: ul=(3.4,-5),w=5,h=7
   
   return "stub!"; // TODO: Delete this line and comment and replace with appropriate code
 }
  
+
 
 
 bool pointsApproxEqual(Point p1, Point p2, double tolerance) {
@@ -96,6 +101,11 @@ void initBox(struct Box *b, double ulx, double uly, double w, double h)
 
 
 double areaOfBox(Box b) {
-  return -42.0;  /* stub---make sure all tests fail initially */
+	Box* b1 = &b;
+	double area;
+
+	area = (b1-> width) * (b1->height);
+	return area;
+  /* stub---make sure all tests fail initially */
   // you can use b.width to access width, and b.height to access height
 }
